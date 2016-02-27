@@ -19,8 +19,8 @@
 
 var app =  {
     // Bluemix credentials
-    route: "<APPLICATION_ROUTE>",
-    guid: "<APPLICATION_GUID>",
+    route: "http://teslahackathonapp.eu-gb.mybluemix.net",
+    guid: "2efe8a13-f58f-4dbe-912c-2b0c77d0181e",
 
     // Initialize BMSClient
     initialize: function() {
