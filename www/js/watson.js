@@ -21,7 +21,9 @@ var recognizeStream = speech_to_text.createRecognizeStream(params);
 fs.createReadStream('../../resources/speech.wav').pipe(recognizeStream);
 
 // and pipe out the transcription
-recognizeStream.pipe(fs.createWriteStream('transcription.txt'));
+var result = "";
+recognizeStream.pipe(result);
+document.getElementById("watson-text").value(result);
 
 
 // listen for 'data' events for just the final text
