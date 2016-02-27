@@ -38,12 +38,13 @@
                 <p id="text-connected">You are not connected!</p>
                 <p id="text-details"></p>
             </div>
-            <button id="retrieve-watson-text" class="btn btn-lg" onclick="watsonapi.call()">Speech to text</button>
+            <button id="retrieve-watson-text" class="btn btn-lg">Speech to text</button>
             <div class="watson-response">
-                <p id="watson-text"></p>
+                <p id="watson-text">.....</p>
             </div>
             <button id="btn-ping" class="btn btn-lg" onclick="app.ping()">PING BLUEMIX</button>
         </div>
+        <script type="text/javascript" src="./js/lib/jquery-1.12.1.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/watson.js"></script>
