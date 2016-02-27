@@ -14,23 +14,27 @@ var params = {
     content_type: 'audio/wav'
 };
 
-// create the stream
-var recognizeStream = speech_to_text.createRecognizeStream(params);
+var watsonapi = {
+    call: function() {
+        // create the stream
+        var recognizeStream = speech_to_text.createRecognizeStream(params);
 
 // pipe in some audio
-fs.createReadStream('../../resources/speech.wav').pipe(recognizeStream);
+        fs.createReadStream('../../resources/speech.wav').pipe(recognizeStream);
 
 // and pipe out the transcription
-var result = "";
-recognizeStream.pipe(result);
-document.getElementById("watson-text").value(result);
+        var result = "";
+        recognizeStream.pipe(result);
+        document.getElementById("watson-text").value(result);
 
 
 // listen for 'data' events for just the final text
 // listen for 'results' events to get the raw JSON with interim results, timings, etc.
 
-recognizeStream.setEncoding('utf8'); // to get strings instead of Buffers from `data` events
+        recognizeStream.setEncoding('utf8'); // to get strings instead of Buffers from `data` events
 
-['data', 'results', 'error', 'connection-close'].forEach(function(eventName) {
-    recognizeStream.on(eventName, console.log.bind(console, eventName + ' event: '));
-});
+        ['data', 'results', 'error', 'connection-close'].forEach(function (eventName) {
+            recognizeStream.on(eventName, console.log.bind(console, eventName + ' event: '));
+        });
+    }
+}
