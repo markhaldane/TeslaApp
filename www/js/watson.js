@@ -14,6 +14,10 @@ var params = {
     content_type: 'audio/wav'
 };
 
+$("#retrieve-watson-text").click(function() {
+    alert( "Handler for .click() called." );
+});
+
 var watsonapi = {
     call: function() {
         // create the stream
